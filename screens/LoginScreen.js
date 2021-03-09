@@ -2,6 +2,8 @@ import * as React from 'react';
 import {View, Text, TouchableOpacity, Alert, StyleSheet} from 'react-native';
 import firebase from 'firebase'
 import db from '../config' 
+import { TextInput } from 'react-native-gesture-handler';
+import { color } from 'react-native-reanimated';
 
 
 export default class LoginScreen extends React.Component{
@@ -35,21 +37,23 @@ export default class LoginScreen extends React.Component{
     render(){
 
     return(
-      <View>
-        <Text style = {'styles.component'} >
+      <View style = {styles.container}>
+
+        <Text style = {styles.component} >
             Welcome to Factomania
         </Text>
-        <TouchableOpacity
-         style = {stlyes.loginScreen}
+        <TextInput
+         style = {styles.loginScreen}
          placeholder = {'emailId'}
-         >
-
-        </TouchableOpacity>
-        <TouchableOpacity 
+         />
+        
+        <TextInput
         style = {styles.loginScreen}
         placeholder = {'password'}
-        >
-
+        />
+        <TouchableOpacity style = {styles.signupbutton}>
+        <Text>  SIGN UP HERE  </Text>
+        this.props.navigation.navigate('SignUp')
         </TouchableOpacity>
       </View>
     )
@@ -62,5 +66,17 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor:'light blue'
   },
+  loginScreen: {
+    width: 200 ,
+    height: 25,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  component:{
+    fontSize:30,
+    color:'red' ,
+    fontWeight:'bold'
+  }
 });

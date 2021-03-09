@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 
-export default class SignUpScreen extends React.Component{
+export default class SettingsScreen extends React.Component{
   render(){
     return(
       <View>
@@ -14,9 +14,8 @@ export default class SignUpScreen extends React.Component{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'red',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    margin: 5
   },
 });
